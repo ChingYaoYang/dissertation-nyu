@@ -1,0 +1,164 @@
+% -*- Mode:TeX -*-
+
+%% IMPORTANT: The official thesis specifications are available at:
+%%            http://libraries.mit.edu/archives/thesis-specs/
+%%
+%%            Please verify your thesis' formatting and copyright
+%%            assignment before submission.  If you notice any
+%%            discrepancies between these templates and the 
+%%            MIT Libraries' specs, please let us know
+%%            by e-mailing thesis@mit.edu
+
+%% The documentclass options along with the pagestyle can be used to generate
+%% a technical report, a draft copy, or a regular thesis.  You may need to
+%% re-specify the pagestyle after you \include  cover.tex.  For more
+%% information, see the first few lines of mitthesis.cls. 
+
+% \documentclass[12pt,vi,twoside]{mitthesis}
+
+%%
+%%  If you want your thesis copyright to you instead of MIT, use the
+%%  ``vi'' option, as above.
+%%
+
+% \documentclass[12pt,twoside,leftblank]{mitthesis}
+
+%%
+%% If you want blank pages before new chapters to be labelled ``This
+%% Page Intentionally Left Blank'', use the ``leftblank'' option, as
+%% above. 
+
+%% This document was then edited by Carlo Yuvienco and Chingyao Yang
+%% at NYU. 
+
+\documentclass[12pt]{mitthesis}
+\usepackage{lgrind}
+
+%% Formula subscripts using \ce{} 
+\usepackage[version=3]{mhchem} 
+\usepackage{textcomp}
+
+\pagestyle{plain}
+
+%% This bit allows you to either specify only the files which you wish to
+%% process, or `all' to process all files which you \include.
+%% Krishna Sethuraman (1990).
+\usepackage[backend=biber,doi=false,isbn=false,url=false,maxnames=10,
+firstinits,citestyle=numeric-comp,bibstyle=nature,sorting=none]{biblatex}
+\bibliography{thesis.bib}
+
+%% Figure inclusion
+\usepackage{graphicx}
+\graphicspath{{../figures/}}
+
+%% Blank page definition
+\newcommand{\blankpage}{
+    \newpage
+    \thispagestyle{empty}
+    \mbox{}
+    \newpage
+}
+
+%% Allowance for TOC reporting and alphanumeric labeling of subsubsections.
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+\renewcommand\thesubsubsection{\thesubsection\alph{subsubsection}}
+
+%% SI Units declaration
+%% added by Carlo and Chingyao
+\usepackage{siunitx}
+    \sisetup{
+        inter-unit-product=\ensuremath{{}\cdot{}},
+        range-units=single,
+        separate-uncertainty = true,
+        multi-part-units=single
+    }
+\DeclareSIUnit[number-unit-product = \;]
+\gforce{{$\times$}\emph{g}}
+\DeclareSIUnit[]
+\wtperwt{\% w/w}
+\DeclareSIUnit[]
+\wtper{\% w/v}
+\DeclareSIUnit[]
+\volper{\% v/v}
+\DeclareSIUnit[number-unit-product = \;]
+\rpm{rpm}
+\DeclareSIUnit[number-unit-product = \;]
+\EU{EU}
+\DeclareSIUnit[number-unit-product = \;]
+\Da{Da}
+\DeclareSIUnit[number-unit-product = \;]
+\ppm{ppm}
+\DeclareSIUnit[number-unit-product = \;]
+\AU{AU}
+\DeclareSIUnit[number-unit-product = \;]
+\psi{psi}
+\DeclareSIUnit[number-unit-product = \;]
+\degtext{degrees}
+\DeclareSIUnit[]
+\mz{\emph{m/z}}
+
+\usepackage{chemmacros}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{subcaption}
+\usepackage{fixltx2e}
+
+\usepackage{pdflscape}
+\usepackage{pdfpages}
+
+\usepackage{caption}
+\captionsetup{font={stretch=1.5}}
+
+\usepackage{fancyhdr}
+
+\usepackage{titlesec}
+
+%% using multiple rows
+\usepackage{multirow}
+
+% \usepackage{chemformula}
+
+\titleformat{\section}[block]
+{\LARGE\bfseries\raggedright}{\thesection}{1em}{}
+
+\begin{document}
+ 
+%% Some departments (e.g. 5) require an additional signature page.  See
+%% signature.tex for more information and uncomment the following line if
+%% applicable.
+
+% \fancypagestyle{plain} {
+     %\fancyhf{}
+     %\renewcommand{\footrulewidth}{0pt}
+     %\renewcommand{\headrulewidth}{0pt}
+% }
+
+%% The method above was included originally in MIT thesis template.
+%% It was then commented out from NYU thesis template
+
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
+\doublespacing
+
+\include{cover}
+% \singlespacing
+% \include{final-thesis-preface}
+\doublespacing
+\include{contents}
+
+%% THIS IS THE PLACE YOU CHOOSE TO INCLUDE YOUR CHAPTERS
+%% use \include without '%' for compiling.
+
+\pagenumbering{arabic}
+\include{chap1}
+% \include{chap2}
+% \appendix
+% \include{appc}
+% \singlespacing
+% \include{appa}
+% \include{appb}
+\end{document}
