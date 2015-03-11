@@ -1,4 +1,5 @@
 # The following list is for the file format that will be ignore from git.
+# Chingyao Yang 2015
 
 # image files
 *.png
@@ -17,5 +18,6 @@
 *.toc
 
 # others
-
-
+.DS_Store
+*.swp
+*.tex~
