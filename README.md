@@ -12,6 +12,7 @@ The following are the tools that I use:
 * [MacTex] - Help you using LeTaX on your Mac
 * [Mendeley] - Citation management, your bibtex generator!
 * [MacVim] - Help you code (sometimes) and focus on your writing.
+
 ** Free software! Yay! **
 
 Good luck and have fun with your dissertation!
