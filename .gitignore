@@ -20,4 +20,4 @@
 # others
 .DS_Store
 *.swp
-*.tex~
+*~
